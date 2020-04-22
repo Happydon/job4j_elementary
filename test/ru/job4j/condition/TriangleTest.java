@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static ru.job4j.condition.Triangle.exist;
-import static ru.job4j.condition.Triangle.impossible;
+
 
 public class TriangleTest {
 
@@ -16,8 +16,8 @@ public class TriangleTest {
     }
 
     @Test
-    public void when337ThenTrue() {
-        boolean result = impossible(3, 3, 7);
-        assertThat(result, is(true));
+    public void when337ThenFalse() {
+        boolean result = exist(3, 3, 7);
+        assertThat(result, is(false));
     }
 }
