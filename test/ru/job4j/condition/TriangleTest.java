@@ -2,7 +2,7 @@ package ru.job4j.condition;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-import static ru.job4j.condition.Triangle.exist;
+import static ru.job4j.condition.Triangle1.exist;
 public class TriangleTest {
     @Test
     public void when222ThenTrue() {
