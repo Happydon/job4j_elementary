@@ -6,7 +6,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static ru.job4j.condition.Triangle.exist;
 
-
 public class TriangleTest {
 
     @Test
