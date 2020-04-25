@@ -1,33 +1,71 @@
-package ru.job4j;
+package ru.job4j.converter;
+
+/**
+ * Convert.
+ *
+ * @author Ilya Schastliviy
+ */
 
 public class Converter {
+    /**
+     * Method RubleToEuro.
+     * @param value value in rubles.
+     * @return value in Euro.
+     */
     public static int rubleToEuro(int value) {
         int rsl = value / 80;
         return rsl;
     }
-
+    /**
+     * Method RubleToDollar.
+     * @param value value in rubles.
+     * @return value in Dollar.
+     */
     public static int rubleToDollar(int value) {
         int rsl = value / 70;
         return rsl;
     }
+    /**
+     * Method RubleToFunt.
+     * @param value value in rubles.
+     * @return value in Funt.
+     */
     public static int rubleToFunt(int value) {
         int rsl = value / 90;
         return rsl;
     }
-
+    /**
+     * Method DollarToRuble.
+     * @param value value in dollars.
+     * @return value in Rubles.
+     */
     public static int dollarToRuble(int value) {
         int rsl = value * 70;
         return rsl;
     }
+    /**
+     * Method EuroToRuble.
+     * @param value value in euros.
+     * @return value in Rubles.
+     */
     public static int euroToRuble(int value) {
         int rsl = value * 80;
         return rsl;
     }
-
+    /**
+     * Method funtToRuble.
+     * @param value value in funts.
+     * @return value in Rubles.
+     */
     public static int funtToRuble(int value) {
         int rsl = value * 70;
         return rsl;
     }
+
+    /**
+     * Main.
+     * @param args - args.
+     */
     public static void main(String[] args) {
         int in = 160;
         int expected = 2;
