@@ -2,7 +2,7 @@ package ru.job4j.condition;
 
 import org.junit.Test;
 import org.junit.Assert;
-import ru.job4j.Converter;
+import ru.job4j.converter.Converter;
 
 import static ru.job4j.condition.Point.distance;
 
