@@ -5,5 +5,10 @@ public class ArrayDefinition {
         short[] ages = new short[10];
         String[] surname = new String[100500];
         float[] prices = new float[40];
+        String[] names = new String[4];
+        names[0] = "Григорий";
+        names[1] = "Василий";
+        names[2] = "Кирилл";
+        names[3] = "Мефодий";
     }
 }
