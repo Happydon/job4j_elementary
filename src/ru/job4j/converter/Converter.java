@@ -5,7 +5,6 @@ package ru.job4j.converter;
  *
  * @author Ilya Schastliviy
  */
-
 public class Converter {
     /**
      * Method RubleToEuro.
@@ -61,7 +60,6 @@ public class Converter {
         int rsl = value * 70;
         return rsl;
     }
-
     /**
      * Main.
      * @param args - args.

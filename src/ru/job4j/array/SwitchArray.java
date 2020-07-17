@@ -13,7 +13,6 @@ public class SwitchArray {
         array[array.length - 1] = temp;
         return array;
     }
-
     public static void main(String[] args) {
         int[] nums = new int[] {1, 2, 3, 4, 5, 6};
         int[] rsl = swapBorder(nums);
