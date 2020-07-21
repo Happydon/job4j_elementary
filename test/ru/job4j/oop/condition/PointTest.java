@@ -1,8 +1,8 @@
-package ru.job4j.condition;
+package ru.job4j.oop.condition;
 
 import org.junit.Test;
 import org.junit.Assert;
-import ru.job4j.converter.Converter;
+import ru.job4j.oop.condition.Point;
 
 
 public class PointTest {
