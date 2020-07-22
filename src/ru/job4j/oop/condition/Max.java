@@ -4,9 +4,9 @@ public class Max {
         return first > second ? first : second;
     }
     public double max(double first, double second, double third) {
-        return third > max(first, second) ? third : max(first, second);
+        return max(max(first, second) ,third);
     }
     public double max(double first, double second, double third, double fourth) {
-        return max(third, fourth) > max(first, second) ? max(third, fourth) : max(first, second);
+        return max(max(third, fourth), max(first, second));
     }
 }
