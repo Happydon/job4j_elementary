@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Matches {
     public static void main(String[] args) {
         int matches = 11;
-        int count = 0;
+        boolean count = false;
         int player = 0;
         Scanner input = new Scanner(System.in);
         System.out.print("Добро пожаловать. ");
@@ -14,16 +14,16 @@ public class Matches {
             int take = Integer.valueOf(input.nextLine());
             if (0 < take && take < 4) {
                 matches -= take;
-                count++;
+                count = !count;
                 System.out.print("Осталось " + matches + " спичек ");
             } else {
                 System.out.print("Введите корректное количесво спичек. ");
             }
         }
-        if (count % 2 == 0) {
-            player = 2;
-        } else {
+        if (count) {
             player = 1;
+        } else {
+            player = 2;
         }
         System.out.print("Поздравляем с победой, игрок № " + player);
     }
