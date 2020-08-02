@@ -46,11 +46,9 @@ public class StartUI {
                     System.out.println("Заявка по id не найдена");
                 }
             } else if (select == 5) {
-                System.out.println("=== Find Item by Name ====");
-                System.out.print("Enter name: ");
                 String key = input.askStr("=== Find Item by Name ====" + "/n" + "Enter name: ");
                 Item[] item = tracker.findByName(key);
-                if (item != null) {
+                if (item.length != 0) {
                     for (int i = 0; i < item.length; i++) {
                         System.out.println(item[i]);
                     }
