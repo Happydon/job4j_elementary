@@ -21,7 +21,6 @@ public class StartUI {
         String name = input.askStr("Enter Name: ");
         Item item = new Item();
         item.setName(name);
-        tracker.replace(id, item);
         if (tracker.replace(id, item)) {
             System.out.print("Operation was successful");
         } else {
@@ -31,7 +30,6 @@ public class StartUI {
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.print("=== Delete Item ====");
         int id = input.askInt("Enter ID: ");
-        tracker.delete(id);
         if (tracker.delete(id)) {
             System.out.print("Operation was successful");
         } else {
