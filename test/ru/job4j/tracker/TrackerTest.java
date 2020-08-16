@@ -9,8 +9,7 @@ public class TrackerTest {
     @Test
     public void whenReplace() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
+        Item bug = new Item("Bug");
         tracker.add(bug);
         int id = bug.getId();
         Item bugWithDesc = new Item();
@@ -22,8 +21,7 @@ public class TrackerTest {
     @Test
     public void whenDelete() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
+        Item bug = new Item("Bug");
         tracker.add(bug);
         tracker.delete(1);
         assertNull(tracker.findById(1));
