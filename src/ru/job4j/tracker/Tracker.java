@@ -11,6 +11,12 @@ public class Tracker {
         items[size++] = item;
         return item;
     }
+    public Item add(Item item, String name) {
+        item.setName(name);
+        item.setId(ids++);
+        items[size++] = item;
+        return item;
+    }
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }

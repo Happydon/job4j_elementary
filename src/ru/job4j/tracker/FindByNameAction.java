@@ -18,10 +18,10 @@ public class FindByNameAction implements UserAction {
         Item[] item = tracker.findByName(key);
         if (item.length != 0) {
             for (int i = 0; i < item.length; i++) {
-                System.out.println(item[i]);
+                out.println(item[i]);
             }
         } else {
-            System.out.println("Заявка по id не найдена");
+           out.println("Заявка по id не найдена");
         }
         return true;
     }
