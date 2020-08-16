@@ -13,7 +13,7 @@ public class EditAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        out.println("=== Edit Item ====");
+        out.println("=== Edit Item ===");
         int id = input.askInt("Enter ID: ");
         String name = input.askStr("Enter Name: ");
         Item item = new Item();

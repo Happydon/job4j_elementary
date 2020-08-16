@@ -13,7 +13,7 @@ public class FindByNameAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        out.println("=== Find Item by Name ====");
+        out.println("=== Find Item by Name ===");
         String key = input.askStr("Enter name: ");
         Item[] item = tracker.findByName(key);
         if (item.length != 0) {
