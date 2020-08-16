@@ -8,6 +8,8 @@ public class Item {
     }
 
     public Item(String name) {
+        Item item = new Item();
+        item.setName(name);
     }
 
     public int getId() {
