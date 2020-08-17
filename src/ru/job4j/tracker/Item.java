@@ -8,8 +8,7 @@ public class Item {
     }
 
     public Item(String name) {
-        Item item = new Item();
-        item.setName(name);
+        this.name = name;
     }
 
     public int getId() {
