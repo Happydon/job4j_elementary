@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
-import static org.hamcrest.core.IsNull.nullValue;
 
 public class TrackerTest {
     @Test
@@ -39,8 +38,12 @@ public class TrackerTest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "=== Exit ===" + System.lineSeparator()
-        ));
+                "Menu."
+                        + System.lineSeparator()
+                        + "0. Exit"
+                        + System.lineSeparator()
+                        + "=== Exit ==="
+                        + System.lineSeparator()));
     }
     @Test
     public void whenFindAllAction() {
@@ -56,8 +59,38 @@ public class TrackerTest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "=== Create a new Item ===" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Show All Items ===" + System.lineSeparator() + "Item{id=1, name='28'}" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Exit ===" + System.lineSeparator()
-        ));
+                "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Show"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Create a new Item ==="
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Show"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Show All Items ==="
+                        + System.lineSeparator()
+                        + "Item{id=1, name='28'}"
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Show"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Exit ==="
+                        + System.lineSeparator()));
     }
     @Test
     public void whenFindByIDAction() {
@@ -73,8 +106,38 @@ public class TrackerTest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "=== Create a new Item ===" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Find Item by ID ===" + System.lineSeparator() + "Item{id=1, name='28'}" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Exit ===" + System.lineSeparator()
-        ));
+                "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by ID"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Create a new Item ==="
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by ID"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Find Item by ID ==="
+                        + System.lineSeparator()
+                        + "Item{id=1, name='28'}"
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by ID"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Exit ==="
+                        + System.lineSeparator()));
     }
     @Test
     public void whenFindByNameAction() {
@@ -90,7 +153,60 @@ public class TrackerTest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "=== Create a new Item ===" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Find Item by Name ===" + System.lineSeparator() + "Item{id=1, name='28'}" + System.lineSeparator() + "Menu." + System.lineSeparator() + "=== Exit ===" + System.lineSeparator()
+                "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by Name"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Create a new Item ==="
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by Name"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Find Item by Name ==="
+                        + System.lineSeparator()
+                        + "Item{id=1, name='28'}"
+                        + System.lineSeparator()
+                        + "Menu."
+                        + System.lineSeparator()
+                        + "0. Create"
+                        + System.lineSeparator()
+                        + "1. Find by Name"
+                        + System.lineSeparator()
+                        + "2. Exit"
+                        + System.lineSeparator()
+                        + "=== Exit ==="
+                        + System.lineSeparator()
+                ));
+    }
+    @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"1", "0" }
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. Exit%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                                + "=== Exit ===%n"
+                )
         ));
     }
 }
